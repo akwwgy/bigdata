@@ -1,0 +1,2 @@
+http://api-breakingnews-web.itheima.net/ 更新以后的根路径接口
+http://ajax.frontend.itheima.net
