@@ -43,7 +43,7 @@ function renderAvatar(user) {
     $('#welcome').html('欢迎&nbsp;&nbsp;' + name);
     //按需血染用户头像
     if (user.user_pic !== null) {
-        $('.layui-nav-img').attr('src', user_pic).show();
+        $('.layui-nav-img').attr('src', user.user_pic).show();
         $('.text-avatar').hide();
 
     } else {

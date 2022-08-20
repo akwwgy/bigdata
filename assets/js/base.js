@@ -7,7 +7,7 @@ $.ajaxPrefilter(function (options) {
     console.log(options.url);
 
     //统一为有权限的接口 设置headers请求头
-    if (options.url.indexOf('/my') != -1) {  //使用index方法判断是否有my这个字符串
+    if (options.url.indexOf('/my') != -1) {  //使用indexOf方法判断是否有my这个字符串
         options.headers = {
             //header就是请求头配置对象
             Authorization: localStorage.getItem('token') || ''
@@ -16,7 +16,6 @@ $.ajaxPrefilter(function (options) {
     //全局统一挂载complete回调函数
     //无论成功与否，都会调用这个complate
     options.complete = function (res) {
-        console.log(res);
         //在complete中使用resJson拿到服务器相应回来的数据
         if (res.responseJSON.status === 1 && res.responseJSON.message === '身份认证失败！') {
             location.href = './login.html';
